@@ -1,0 +1,33 @@
+<% if @order_details.present? %>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>Customer</th>
+	      <th>Product Name</th>
+
+	      <th>Quantity</th>
+	      <th>Price</th>
+	      <th>status</th>
+	      <th>Created At</th>
+
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <% @order_details.each do |order_details| %>
+	      <tr>
+	        <td><%= order_details.customer.name%></td>
+	        <td><%= order_details.product_name %></td>
+	        <td><%= order_details.quantity %></td>
+	        <td><%= order_details.price %></td>
+	        <td><%= order_details.status %></td>
+	        <td><%= order_details.created_at %></td>
+	        <%# <td>
+	          <%= link_to "Show", product %>
+	          <%# <%= link_to "Edit", edit_product_path(product) %> 
+	        <%# </td> %> 
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+
+<% end %>
